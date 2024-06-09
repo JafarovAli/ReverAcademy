@@ -17,11 +17,11 @@ namespace Task1
                 isAuto = true,
                 year = 2024
             };
-            
-            
+
+
             car.GetAllInformation();
             Console.WriteLine($"Oil : {car.GetOilLiter()} litr");
-            Console.WriteLine("Can be driven : "+ car.Driving());
+            Console.WriteLine("Can be driven : " + car.Driving());
         }
     }
 }

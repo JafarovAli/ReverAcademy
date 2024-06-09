@@ -10,11 +10,10 @@ namespace Library.Data
         {
         }
 
-        public ApplicationDBContext(DbSet<Books> books, DbSet<Author> authors, DbSet<Libraries> libraries)
+        public ApplicationDBContext(DbSet<Products> products, DbSet<Category> categories)
         {
-            Books = books;
-            Authors = authors;
-            Libraries = libraries;
+            Products = products;
+            Categories = categories;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,9 +21,8 @@ namespace Library.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Books> Books { get; set; }
-        public DbSet<Author> Authors { get; set; }
-        public DbSet<Libraries> Libraries { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
 
     }
