@@ -1,12 +1,13 @@
 ﻿using Cars.Data;
 using Cars.Models;
-using Cars.ViewModels.ContacUs;
+using Cars.ViewModels.CombinedViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Cars.Controllers
 {
-	public class HomeController : Controller
+    public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDBContext dBContext;
@@ -19,16 +20,17 @@ namespace Cars.Controllers
 
         public async Task<IActionResult> Index()
         {
-			//List<Car> car = new List<Car>();
-            //car = await dBContext.Cars.ToListAsync();
-            return View();
+            CombinedVM combinedVM = new CombinedVM();
+            
+            combinedVM.Cars = await dBContext.Cars.ToListAsync();
+            return View(combinedVM);
         }
         
-        public async Task<IActionResult> ContactUs(ContactUsVM contact)
+        public async Task<IActionResult> ContactUs(CombinedVM contact)
         {
-			ContactUs contactUs = new ContactUs()
+            ContactUs contactUs = new ContactUs()
             {
-                Email = contact.Email,
+                Email = contact.ContactUsVM.Email
             };
             await dBContext.ContactUs.AddAsync(contactUs);
             await dBContext.SaveChangesAsync();

@@ -1,12 +1,10 @@
 using Cars.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
-var provider = builder.Services.BuildServiceProvider();
-var configuration = provider.GetRequiredService<IConfiguration>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddConfigureDbServices(configuration);
+builder.Services.AddConfigureDbServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -28,5 +26,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+           name: "areas",
+           pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+         );
 
 app.Run();

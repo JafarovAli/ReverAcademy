@@ -1,4 +1,6 @@
-﻿@* @model List<Car> *@
+﻿@using Cars.ViewModels.CombinedViewModel;
+
+@model CombinedVM
 
 
 <!--service start -->
@@ -145,7 +147,7 @@
 		<div class="featured-cars-content">
 
 				<div class="row">
-				@* @foreach (var item in Model)
+				@foreach (var item in Model.Cars)
 				{
 					<div class="col-lg-3 col-md-4 col-sm-6">
 						<div class="single-featured-cars">
@@ -170,7 +172,7 @@
 								</p>
 							</div>
 						</div>
-					</div> *@
+					</div>
 				}		
 		</div>
 	</div><!--/.container-->

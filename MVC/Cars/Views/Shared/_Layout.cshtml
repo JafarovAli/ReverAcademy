@@ -1,4 +1,5 @@
-﻿@model ContactUsVM
+﻿@using Cars.ViewModels.CombinedViewModel;
+@model CombinedVM
 
 <!doctype html>
 <!doctype html>
@@ -301,7 +302,7 @@
 							<div class="hm-foot-email">
 								<form asp-action="ContactUs" asp-controller="Home" method="post">
 									<div class="foot-email-box">
-										<input asp-for="Email" type="text" class="form-control" placeholder="Add Email">
+										<input asp-for="ContactUsVM.Email" type="text" class="form-control" placeholder="Add Email">
 									</div><!--/.foot-email-box-->
 									<div class="foot-email-subscribe">
 										<button type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
