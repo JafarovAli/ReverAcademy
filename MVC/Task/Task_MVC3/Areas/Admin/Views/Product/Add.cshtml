@@ -1,0 +1,29 @@
+﻿@model Products
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<form asp-action="Add" asp-controller="Product">
+    <div class="form-group">
+        <label></label>
+        <input asp-for="Title" class="form-control" id="exampleInputEmail1" placeholder="Enter Title">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for ="Description" class="form-control" id="exampleInputEmail1" placeholder="Enter Description">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for="Price" class="form-control" id="exampleInputEmail1" placeholder="Enter Price">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for="Image" class="form-control" id="exampleInputEmail1" placeholder="Enter Image Link">
+    </div>
+    <div class="form-group">
+        <label>Enter IsNew</label>
+        <input asp-for="IsNew" class="form-control" id="exampleInputEmail1" placeholder="Enter IsNew">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
