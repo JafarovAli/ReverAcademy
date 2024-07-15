@@ -29,6 +29,9 @@
                     <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id">
                     <button type="button" class="btn btn-danger">Delete</button>
                     </a>
+                    <a asp-action="Update" asp-controller="Product" asp-route-id="@item.Id">
+                        <button type="button" class="btn btn-success">Update</button>
+                    </a>
                 <td>
             </tr>
         }
@@ -37,3 +40,4 @@
 <a asp-action="Add" asp-controller="Product">
     <button type="button" class="btn btn-primary">Add</button>
 </a>
+
