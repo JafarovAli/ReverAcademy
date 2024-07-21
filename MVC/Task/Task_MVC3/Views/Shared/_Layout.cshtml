@@ -53,27 +53,43 @@
                                 Shop
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Why Us
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Testimonial
-                            </a>
-                        </li>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Login" asp-controller="Account">
+                                    Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Register" asp-controller="Account">
+                                    Register
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="LogOut" asp-controller="Account">
+                                    LogOut
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    @User.Identity.Name
+                                </a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link" asp-action="ContactUs" asp-controller="Home" >Contact Us</a>
                         </li>
                     </ul>
                     <div class="user_option">
-                        <a asp-action="Index" asp-controller="Product" asp-area="Admin">
+                        @* <a asp-action="Index" asp-controller="Product" asp-area="Admin">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span>
                                 Admin
                             </span>
-                        </a>
+                        </a> *@
                         <a href="#">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                         </a>
