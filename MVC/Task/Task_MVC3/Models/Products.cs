@@ -1,8 +1,9 @@
-﻿namespace Task_MVC3.Models
+﻿using Task_MVC3.Models.Commons;
+
+namespace Task_MVC3.Models
 {
-    public class Products
+    public class Products:BaseEntity
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }

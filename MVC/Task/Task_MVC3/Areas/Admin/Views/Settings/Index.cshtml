@@ -1,0 +1,28 @@
+﻿@model Settings
+
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">AboutUs</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Location</th>
+            <th scope="col">Email Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model?.AboutUs</td>
+            <td>@Model?.Phone</td>
+            <td>@Model?.Location</td>
+            <td>@Model?.EmailAddress</td>
+        </tr>
+    </tbody>
+</table>
+<a asp-action="Edit" asp-controller="Settings">
+    <button type="button" class="btn btn-primary">Edit</button>
+</a>

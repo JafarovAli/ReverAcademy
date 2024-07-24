@@ -18,6 +18,7 @@ namespace Task_MVC3.Data
 
         public DbSet<Products> Products { get; set; }
         public DbSet<ContactUs> ContactUs { get; set; }
+        public DbSet<Settings> Settings { get; set; }
     }
 
 }

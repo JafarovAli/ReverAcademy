@@ -1,8 +1,9 @@
-﻿namespace Task_MVC3.Models
+﻿using Task_MVC3.Models.Commons;
+
+namespace Task_MVC3.Models
 {
-    public class ContactUs
+    public class ContactUs:BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
