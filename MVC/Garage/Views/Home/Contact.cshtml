@@ -1,0 +1,26 @@
+﻿@using Garage.ViewModel.CombinedViewModel;
+@model CombinedVM
+<div class="allcontain">
+	<div class="contact">
+		<div class="newslettercontent">
+			<div class="leftside">
+				<div class="contact-form">
+					<h1>Contact Us</h1>
+					<form method="post" asp-action="Contact" asp-controller="Home">
+						<div class="form-group group-coustume">
+							<input asp-for="ContactUsVM.Name" type="text" class="form-control name-form" placeholder="Name">
+							<input asp-for ="ContactUsVM.Email" type="text" class="form-control email-form" placeholder="E-mail">
+							<input asp-for="ContactUsVM.Subject" type="text" class="form-control subject-form" placeholder="Subject">
+							<textarea asp-for="ContactUsVM.Message" rows="4" cols="50" class="message-form"></textarea>
+							<button type="submit" class="btn btn-default btn-submit">Submit</button>
+						</div>
+					</form>
+					
+				</div>
+			</div>
+			<div class="google-maps">
+				<div id="googleMap"></div>
+			</div>
+		</div>
+	</div>
+</div>

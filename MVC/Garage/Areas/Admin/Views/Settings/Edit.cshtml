@@ -1,0 +1,30 @@
+﻿@using Garage.ViewModel.CombinedViewModel;
+@model CombinedVM
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<form method="post" asp-action="Edit" asp-controller="Settings">
+    <div class="form-group">
+        <label></label>
+        <input asp-for="SettingVM.PhoneNumber" class="form-control" id="exampleInputEmail1" placeholder="Enter Phone Number">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for="SettingVM.FacebookUrl" class="form-control" id="exampleInputEmail1" placeholder="Enter Facebook Url">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for="SettingVM.TwitterUrl" class="form-control" id="exampleInputEmail1" placeholder="Enter Twitter Url">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for="SettingVM.GoogleSiteUrl" class="form-control" id="exampleInputEmail1" placeholder="Enter Google Site Url">
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input asp-for="SettingVM.PinterestUrl" class="form-control" id="exampleInputEmail1" placeholder="Enter Pinterest Url">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
